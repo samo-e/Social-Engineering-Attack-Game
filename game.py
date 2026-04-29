@@ -254,7 +254,7 @@ class ReportGenerator:
     def __init__(self, state: GameState):
         self.state = state
 
-    def _grade(self) -> tuple[str, str]:
+    def _grade(self) -> Tuple[str, str]:
         pct = (self.state.score / self.state.max_score * 100) if self.state.max_score else 0
         if pct >= 90:
             return "A", C.GREEN
@@ -292,7 +292,7 @@ class ReportGenerator:
         # Per-category breakdown
         divider()
         print(f"\n  {C.BOLD}Breakdown by Category:{C.RESET}\n")
-        categories: dict[str, list] = {}
+        categories: Dict[str, List] = {}
         for r in results:
             categories.setdefault(r.category, []).append(r)
 
