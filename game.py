@@ -58,7 +58,7 @@ class GameState:
 # ── ScenarioLoader ────────────────────────────────────────────────────────────
 class ScenarioLoader:
     def __init__(self, path: str):
-        with open(path, "r") as f:
+        with open(path, "r", encoding="utf-8") as f:
             data = json.load(f)
         self.all_scenarios = data["scenarios"]
 
