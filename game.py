@@ -2,7 +2,7 @@ import json
 import os
 import random
 from dataclasses import dataclass, field
-from typing import Optional
+from typing import Dict, List, Tuple
 
 
 # ── Colours ──────────────────────────────────────────────────────────────────
