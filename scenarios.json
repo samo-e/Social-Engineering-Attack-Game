@@ -1,0 +1,244 @@
+{
+  "scenarios": [
+    {
+      "id": 1,
+      "category": "Email",
+      "difficulty": "beginner",
+      "title": "The IT Department Email",
+      "description": "You receive the following email at work:\n\n  From: it-support@c0mpany-helpdesk.com\n  Subject: URGENT: Your account will be suspended in 24 hours!\n\n  Dear Employee,\n\n  Our systems have detected unusual activity on your account.\n  You MUST verify your credentials immediately to avoid suspension.\n\n  Click here to verify: http://login.company-secure-verify.net/verify\n\n  Regards,\n  IT Support Team",
+      "question": "What do you do?",
+      "choices": [
+        "Click the link immediately — you don't want your account suspended.",
+        "Reply to the email asking for more information.",
+        "Ignore it — it looks suspicious. Report it to your real IT department.",
+        "Forward the email to your colleagues to warn them."
+      ],
+      "correct": 2,
+      "hint": "Look closely at the sender's email domain. Does it match your company's real domain?",
+      "explanation": {
+        "correct": "Great catch! The sender domain 'c0mpany-helpdesk.com' uses a zero instead of the letter 'o' — a classic lookalike domain trick. The link also leads to an unofficial site. Reporting it to IT is always the right move.",
+        "wrong": [
+          "Never click links in urgent emails without verifying the sender. Urgency is a manipulation tactic designed to make you act without thinking.",
+          "Replying confirms your email is active and could lead to more targeted attacks. Contact IT through official channels instead.",
+          "Forwarding could spread the phishing link to others and put them at risk too."
+        ]
+      },
+      "red_flags": [
+        "Sender domain uses '0' instead of 'o' (c0mpany)",
+        "Creates urgency with '24 hours' deadline",
+        "Generic greeting 'Dear Employee'",
+        "Suspicious external link domain"
+      ]
+    },
+    {
+      "id": 2,
+      "category": "Email",
+      "difficulty": "intermediate",
+      "title": "The CEO's Favour",
+      "description": "You're at work and receive this email:\n\n  From: ceo@yourcompany.com\n  Subject: Quick favour — confidential\n\n  Hi,\n\n  I'm currently in a meeting and can't talk. I need you to urgently\n  purchase 5x $200 Amazon gift cards for a client gift.\n  Scratch off the codes and email them to me directly.\n  I'll reimburse you. Keep this between us for now.\n\n  Thanks,\n  David Chen, CEO",
+      "question": "How do you respond?",
+      "choices": [
+        "Buy the gift cards — the CEO asked personally and it seems urgent.",
+        "Email back asking for a purchase order number before proceeding.",
+        "Call the CEO directly using the official company phone number to verify.",
+        "Do nothing and hope someone else handles it."
+      ],
+      "correct": 2,
+      "hint": "Even if the email address looks real, can email addresses be faked or compromised?",
+      "explanation": {
+        "correct": "Excellent! This is a classic 'CEO fraud' or Business Email Compromise (BEC) scam. Always verify unusual financial requests through a second channel — like a phone call using the official number, never one provided in the email.",
+        "wrong": [
+          "Gift card scams are extremely common. The 'keep it between us' line is a red flag designed to stop you from consulting others.",
+          "Emailing back still uses the compromised channel. The attacker can reply with a fake PO number.",
+          "Ignoring it doesn't protect the company. Someone else might fall for it, and it should be reported to IT security."
+        ]
+      },
+      "red_flags": [
+        "'Keep this between us' — isolates you from getting a second opinion",
+        "Unusual request (gift cards are untraceable)",
+        "Urgency combined with a request for secrecy",
+        "No formal purchase process mentioned"
+      ]
+    },
+    {
+      "id": 3,
+      "category": "Phone",
+      "difficulty": "beginner",
+      "title": "The Bank Call",
+      "description": "You receive a phone call:\n\n  Caller: 'Hello, this is Sarah from SecureBank fraud prevention.\n  We've detected a suspicious $450 charge on your account from\n  Romania. To protect your account, I need to verify your identity.\n  Can you please confirm your full card number and the 3-digit\n  security code on the back?'",
+      "question": "What do you do?",
+      "choices": [
+        "Provide the details — you don't want a fraudulent charge to go through.",
+        "Ask the caller to hold, then call your bank's official number to verify.",
+        "Give only the last 4 digits to be safe.",
+        "Ask for the caller's employee ID and then provide the details."
+      ],
+      "correct": 1,
+      "hint": "Legitimate banks will NEVER ask for your full card number or CVV over the phone — they already have it.",
+      "explanation": {
+        "correct": "Perfect response! Hanging up and calling your bank's official number (found on the back of your card or their website) is always the safest move. This is called 'vishing' — voice phishing.",
+        "wrong": [
+          "Your bank never needs your full card number or CVV — they already have it. This is a clear sign of fraud.",
+          "Even partial information combined with other stolen data can be used by attackers. Don't give anything.",
+          "An employee ID can be faked. It gives a false sense of legitimacy but proves nothing."
+        ]
+      },
+      "red_flags": [
+        "Unsolicited call creating urgency (fraud alert)",
+        "Asking for full card number — banks never do this",
+        "Requesting CVV over the phone",
+        "Pressure to act immediately"
+      ]
+    },
+    {
+      "id": 4,
+      "category": "Phone",
+      "difficulty": "intermediate",
+      "title": "The IT Helpdesk Call",
+      "description": "You get a call at your desk:\n\n  Caller: 'Hi, this is Mike from IT. We're doing a routine security\n  audit and noticed your computer may have been compromised.\n  I need to remote into your machine to run a scan. Can you go to\n  anydesk.com and download the software? Then read me the\n  9-digit access code that appears on screen.'",
+      "question": "What do you do?",
+      "choices": [
+        "Follow the instructions — it sounds like a legitimate IT request.",
+        "Ask for Mike's employee ID and department extension, then call IT back on the official number.",
+        "Download the software but don't give the code until he tells you more.",
+        "Tell him your password so he can log in himself without needing remote access."
+      ],
+      "correct": 1,
+      "hint": "Did YOU initiate this support request? Unsolicited IT calls are a huge red flag.",
+      "explanation": {
+        "correct": "Well done! You should always hang up and call IT back using the official internal number. Giving anyone a remote access code gives them full control of your computer and your company's network.",
+        "wrong": [
+          "Legitimate IT departments have ticketing systems. They don't make cold calls asking for remote access without a prior ticket.",
+          "Downloading remote access software and providing the code gives the attacker full control of your machine — even if you don't give the code straight away.",
+          "NEVER share your password with anyone — including real IT staff. IT can reset passwords without knowing yours."
+        ]
+      },
+      "red_flags": [
+        "Unsolicited call — you never raised a support ticket",
+        "Asking to install remote access software",
+        "Requesting an access code that gives full control",
+        "Vague reason ('routine audit')"
+      ]
+    },
+    {
+      "id": 5,
+      "category": "Web",
+      "difficulty": "beginner",
+      "title": "The Login Page",
+      "description": "You click a link from a Google search result to log into your company's HR portal.\n  The page looks exactly right — same logo, same layout.\n\n  You check the browser bar and see:\n\n    http://hrportal.yourcompany-login.net/signin\n\n  The page is asking for your username and password.",
+      "question": "What do you do?",
+      "choices": [
+        "Log in — the page looks identical to the real one.",
+        "Log in but use a fake password first to test if it's real.",
+        "Close the tab. Check the real URL via your company intranet or IT documentation.",
+        "Log in but immediately change your password afterward."
+      ],
+      "correct": 2,
+      "hint": "Focus on the URL. What is the actual domain here? Is 'yourcompany-login.net' the same as 'yourcompany.com'?",
+      "explanation": {
+        "correct": "Spot on! The domain 'yourcompany-login.net' is NOT your company's domain. Attackers create convincing clone sites on lookalike domains. Always navigate directly to known URLs or use bookmarks.",
+        "wrong": [
+          "Appearances are deceiving — cloned sites are pixel-perfect copies. The URL is your only reliable signal.",
+          "Submitting any credentials to a phishing site — even fake ones — tells the attacker the site is being tested and your real account exists.",
+          "By the time you change your password, the attacker already has your old one. The damage may already be done."
+        ]
+      },
+      "red_flags": [
+        "Domain is 'yourcompany-login.net' not 'yourcompany.com'",
+        "Uses HTTP not HTTPS (no padlock)",
+        "Found via search result, not a trusted bookmark",
+        "Hyphenated domain with the company name"
+      ]
+    },
+    {
+      "id": 6,
+      "category": "Web",
+      "difficulty": "intermediate",
+      "title": "The Pop-up Warning",
+      "description": "While browsing the web, a full-screen pop-up appears:\n\n  ╔══════════════════════════════════════╗\n  ║  ⚠  MICROSOFT SECURITY ALERT  ⚠    ║\n  ║                                      ║\n  ║  Your PC is infected with 3 viruses! ║\n  ║  Your data is at risk.               ║\n  ║                                      ║\n  ║  Call Microsoft Support NOW:         ║\n  ║  1-800-XXX-XXXX                      ║\n  ║                                      ║\n  ║  [  CALL NOW  ]   [ SCAN NOW ]       ║\n  ╚══════════════════════════════════════╝",
+      "question": "What do you do?",
+      "choices": [
+        "Call the number — Microsoft is warning you directly.",
+        "Click 'Scan Now' to remove the viruses.",
+        "Close the browser tab/window. Run a scan using your own installed antivirus.",
+        "Restart your computer and call your ISP."
+      ],
+      "correct": 2,
+      "hint": "Does Microsoft (or any software company) ever display your real IP/virus info inside a webpage pop-up?",
+      "explanation": {
+        "correct": "Correct! This is 'scareware' — a fake alert designed to frighten you into calling a number where scammers will charge you for fake 'tech support' or install real malware. Websites have no ability to scan your computer.",
+        "wrong": [
+          "Microsoft never displays security alerts in your browser or asks you to call a phone number. This is a tech support scam.",
+          "Clicking anything inside a scareware pop-up can trigger malware downloads or take you to a scam site.",
+          "Restarting won't help and calling your ISP is unnecessary. Just close the tab and run your own antivirus."
+        ]
+      },
+      "red_flags": [
+        "Websites cannot scan your computer",
+        "Microsoft never shows alerts in browser pop-ups",
+        "Creates panic with 'your data is at risk'",
+        "Asks you to call a phone number"
+      ]
+    },
+    {
+      "id": 7,
+      "category": "Physical",
+      "difficulty": "beginner",
+      "title": "The USB Drive",
+      "description": "You find a USB drive in the office car park. It has a label on it:\n\n     [ PAYROLL & SALARIES — Q4 2024 ]\n\n  You're curious. No one seems to be around.",
+      "question": "What do you do?",
+      "choices": [
+        "Plug it into your work computer to find out whose it is.",
+        "Take it home and plug it into your personal computer instead.",
+        "Hand it in to your IT/security team without plugging it in anywhere.",
+        "Leave it where you found it — it's not your problem."
+      ],
+      "correct": 2,
+      "hint": "A tempting label on a USB drive found in a car park — does that seem like a coincidence?",
+      "explanation": {
+        "correct": "Perfect! This is a 'USB drop attack'. Attackers deliberately leave infected USB drives in places people will find them. The enticing label is social engineering — it exploits curiosity. Always hand unknown USB drives to IT.",
+        "wrong": [
+          "Plugging an unknown USB into any work computer can instantly compromise the entire network. Some USBs execute code the moment they're plugged in.",
+          "Plugging it into a personal computer still puts your personal data at risk and potentially your home network.",
+          "Leaving it means the next person might plug it in. Handing it to IT is the responsible action."
+        ]
+      },
+      "red_flags": [
+        "Found in a public/semi-public place (car park)",
+        "Enticing label designed to trigger curiosity",
+        "No known owner",
+        "Classic 'USB drop attack' setup"
+      ]
+    },
+    {
+      "id": 8,
+      "category": "Physical",
+      "difficulty": "intermediate",
+      "title": "Tailgating",
+      "description": "You're returning to your office building after lunch.\n  You badge in through the security door. As the door is closing,\n  a person in a delivery uniform carrying a large box says:\n\n  'Hey! Could you hold that? My hands are full and I need to\n  deliver this to the 4th floor. The reception desk is just\n  going to ring through anyway.'",
+      "question": "What do you do?",
+      "choices": [
+        "Hold the door — they're in a delivery uniform and look legitimate.",
+        "Hold the door but escort them to reception yourself.",
+        "Politely decline and direct them to use the intercom at reception.",
+        "Ignore them and let the door close without saying anything."
+      ],
+      "correct": 2,
+      "hint": "A uniform and a large box are easy to obtain. What's the actual security policy purpose of a badge-in door?",
+      "explanation": {
+        "correct": "Exactly right! This is called 'tailgating' or 'piggybacking'. Uniforms and large boxes are props that exploit politeness and authority bias. Every visitor should be verified through official channels — directing them to the intercom is both polite and secure.",
+        "wrong": [
+          "Uniforms can be purchased or faked easily. A legitimate delivery person will have a process to get buzzed in.",
+          "Escorting them is better than leaving them alone, but you've still bypassed the official entry process which exists for a reason.",
+          "Being silent is rude and unhelpful. A polite redirect to reception is both secure and professional."
+        ]
+      },
+      "red_flags": [
+        "Asking to bypass the secure entry system",
+        "Using politeness as leverage ('my hands are full')",
+        "Uniform alone is not verification",
+        "Pre-empting your concern ('reception will ring through anyway')"
+      ]
+    }
+  ]
+}
